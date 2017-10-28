@@ -2,4 +2,12 @@ console.log('Starting notes.js');
 
 //console.log(module);
 
-module.exports.age = 38;
+module.exports.addNote = () => {
+    console.log('addNote');
+    return 'New note';
+};
+
+module.exports.concat = (a, b) => {
+    console.log('concat');
+    return a + b;
+};
