@@ -15,9 +15,6 @@ fs.appendFileSync('greetings.txt', `Hello ${user.username}! You are ${notes.age}
 var res = notes.addNote();
 console.log(res);
 
-var con = notes.concat(1, 5);
-console.log(con);
-
 console.log(_.isString('Silvio Netto'));
 console.log(_.isString('Silvio'));
 console.log(_.isString(1));
@@ -33,12 +30,16 @@ console.log('Yargs: --title: ' + argv.title);
 
 if (command === 'add') {
     console.log('Adding new note');
+    notes.addNote(argv.title, argv.body)
 } else if (command === 'list') {
     console.log('Listing all notes');
+    notes.getAll();
 } else if (command === 'read') {
     console.log('Reading note');
+    notes.getNote(argv.title);
 } else if (command === 'remove') {
     console.log('Removing note');
+    notes.removeNote(argv.title);
 } else {
     console.log('Command not recognized');
 }
